@@ -64,7 +64,7 @@ class Hand:
 
 class Chips:
     
-    def __init__(self,total=100):
+    def __init__(self,total=500):
         self.total = total  # This can be set to a default value or supplied by a user input
         self.bet = 0
         
@@ -139,9 +139,9 @@ def push(player,dealer):
     print('Dealer and player TIED! ')
 
 player_chips = Chips() 
+print("WELCOME TO BLACKJACK")
+print("You have 500 chips. PLAY WISELY!")
 while True:
-    
-    print("WELCOME TO BLACKJACK")
     
     # Create & shuffle the deck, deal two cards to each player
     deck=Deck()
@@ -200,11 +200,14 @@ while True:
     
     # Inform Player of their chips total 
     print("\nPlayer's winnings stand at",player_chips.total)
+
     # Ask to play again
-    new_game = input("Would you like to play another hand? Enter 'y' or 'n' ")
-    if new_game[0].lower()=='y':
-        playing=True
-        continue
+    flag=True
+    if flag:
+         new_game = input("Would you like to play another hand? Enter 'y' or 'n' ")
+         if new_game[0].lower()=='y':
+                  playing=True
+                  continue
     else:
         print("Thanks for playing!") 
     break
