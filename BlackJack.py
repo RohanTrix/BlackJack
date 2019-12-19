@@ -76,7 +76,10 @@ def take_bet(chips):
         except:
             print("Sorry please provide an integer")
         else:
-            if chips.bet>chips.total:
+            if chips.total==0:
+                print("You are broke!")
+                exit()
+            elif chips.bet>chips.total:
                 print(f"Sorry, You do not have enough chips! You have: {chips.total} chips")
             else:
                 break
